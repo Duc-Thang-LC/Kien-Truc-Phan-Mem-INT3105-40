@@ -6,33 +6,60 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 
+//sửa name và type public thành private rồi thêm hàm get
 class Play {
-    public String name;
-    public String type;
+    private String name;
+    private String type;
 
     public Play(String name, String type) {
         this.name = name;
         this.type = type;
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getType() {
+        return this.type;
+    }
 }
 
+//tương tự class trên
 class Performance {
-    public String playID;
-    public int audience;
+    private String playID;
+    private int audience;
 
     public Performance(String playID, int audience) {
         this.playID = playID;
         this.audience = audience;
     }
+
+    public String getPlayID() {
+        return this.playID;
+    }
+
+    public int getAudience() {
+        return audience;
+    }
 }
 
+//như class trên
 class Invoice {
-    public String customer;
-    public ArrayList<Performance> performances;
+    private String customer;
+    private ArrayList<Performance> performances;
 
     public Invoice(String customer, ArrayList<Performance> performances) {
         this.customer = customer;
         this.performances = performances;
+    }
+
+    public String getCustomer() {
+        return customer;
+    }
+
+    public ArrayList<Performance> getPerformances() {
+        return performances;
     }
 }
 
@@ -42,40 +69,40 @@ public class Bill_Detail {
     public static String billDetailsString(Invoice invoice, HashMap<String, Play> plays) {
         int totalAmount = 0;
         int volumeCredits = 0;
-        String results = "Statement for " + invoice.customer + "\n";
+        String results = "Statement for " + invoice.getCustomer() + "\n";
 
-        for (int i = 0; i < invoice.performances.size(); i++) {
-            Performance perf = invoice.performances.get(i);
-            Play play = plays.get(perf.playID);
+        for (int i = 0; i < invoice.getPerformances().size(); i++) {
+            Performance perf = invoice.getPerformances().get(i);
+            Play play = plays.get(perf.getPlayID());
             int thisAmount = 0;
 
-            switch (play.type) {
+            switch (play.getType()) {
                 case "tragedy":
                     thisAmount = 40000;
-                    if (perf.audience > 30) {
-                        thisAmount += 1000 * (perf.audience - 30);
+                    if (perf.getAudience() > 30) {
+                        thisAmount += 1000 * (perf.getAudience() - 30);
                     }
                     break;
 
                 case "comedy":
                     thisAmount = 30000;
-                    if (perf.audience > 20) {
-                        thisAmount += 10000 + 500 * (perf.audience - 20);
+                    if (perf.getAudience() > 20) {
+                        thisAmount += 10000 + 500 * (perf.getAudience() - 20);
                     }
-                    thisAmount += 300 * perf.audience;
+                    thisAmount += 300 * perf.getAudience();
                     break;
                 default:
-                    throw new InputMismatchException("unknow type: " + play.type);
+                    throw new InputMismatchException("unknow type: " + play.getType());
             }
             // add volumn credits
-            volumeCredits += Math.max(perf.audience, 0);
+            volumeCredits += Math.max(perf.getAudience(), 0);
             // add extra credits for every ten comedy attendees
-            if (play.type.equals("comedy")) {
-                volumeCredits += Math.floor(perf.audience / 5.0);
+            if (play.getType().equals("comedy")) {
+                volumeCredits += Math.floor(perf.getAudience() / 5.0);
             }
             // print line for this order
-            results += play.name + ": " + String.format("$%.2f", (thisAmount / 100.0))
-                    + " (" + perf.audience + " seats)\n";
+            results += play.getName() + ": " + String.format("$%.2f", (thisAmount / 100.0))
+                    + " (" + perf.getAudience() + " seats)\n";
             totalAmount += thisAmount;
 
         }
