@@ -1,0 +1,73 @@
+
+==================== Current time: 0s ====================
+
+Producer sending text 'Important Task0' to MessageQueue
+Producer sending text 'Important Task1' to MessageQueue
+Producer sending text 'Important Task2' to MessageQueue
+Producer sending text 'Important Task3' to MessageQueue
+Producer sending text 'Important Task4' to MessageQueue
+Producer sending text 'Important Task5' to MessageQueue
+Producer sending text 'Important Task6' to MessageQueue
+Producer sending text 'Important Task7' to MessageQueue
+Producer sending text 'Important Task8' to MessageQueue
+Producer sending text 'Important Task9' to MessageQueue
+Producer sending text 'Important Task10' to MessageQueue
+Producer sending text 'Important Task11' to MessageQueue
+Producer sending text 'Important Task12' to MessageQueue
+Producer sending text 'Important Task13' to MessageQueue
+Producer sending text 'Important Task14' to MessageQueue
+Producer sending text 'Important Task15' to MessageQueue
+Producer sending text 'Important Task16' to MessageQueue
+Producer sending text 'Important Task17' to MessageQueue
+Producer sending text 'Important Task18' to MessageQueue
+Producer sending text 'Important Task19' to MessageQueue
+Consumer 2 received: 'Important Task1' and finish after 1 seconds
+Consumer 1 received: 'Important Task0' and finish after 1 seconds
+Consumer 3 received: 'Important Task2' and finish after 1 seconds
+Consumer 0 received: 'Important Task3' and finish after 1 seconds
+
+==================== Current time: 1s ====================
+
+Consumer 2 received: 'Important Task4' and finish after 1 seconds
+Consumer 3 received: 'Important Task6' and finish after 1 seconds
+Consumer 0 received: 'Important Task7' and finish after 1 seconds
+Consumer 1 received: 'Important Task5' and finish after 1 seconds
+
+==================== Current time: 2s ====================
+
+Consumer 2 received: 'Important Task9' and finish after 1 seconds
+Consumer 3 received: 'Important Task11' and finish after 1 seconds
+Consumer 1 received: 'Important Task8' and finish after 1 seconds
+Consumer 0 received: 'Important Task10' and finish after 1 seconds
+
+==================== Current time: 3s ====================
+
+Consumer 1 received: 'Important Task13' and finish after 1 seconds
+Consumer 2 received: 'Important Task15' and finish after 1 seconds
+Consumer 0 received: 'Important Task12' and finish after 1 seconds
+Consumer 3 received: 'Important Task14' and finish after 1 seconds
+
+==================== Current time: 4s ====================
+
+Consumer 1 received: 'Important Task17' and finish after 1 seconds
+Consumer 3 received: 'Important Task19' and finish after 1 seconds
+Consumer 0 received: 'Important Task16' and finish after 1 seconds
+Consumer 2 received: 'Important Task18' and finish after 1 seconds
+
+==================== Current time: 5s ====================
+
+
+==================== Current time: 6s ====================
+
+
+==================== Current time: 7s ====================
+
+
+==================== Current time: 8s ====================
+
+
+==================== Current time: 9s ====================
+
+
+==================== Current time: 10s ====================
+
